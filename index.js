@@ -8,8 +8,8 @@ const path = require("path");
 dotenv.config();
 
 // routes
-const authRouter = require("./src/routers/authRouter");
-const userRouter = require("./src/routers/userRouter");
+// const authRouter = require("./src/routers/authRouter");
+// const userRouter = require("./src/routers/userRouter");
 
 
 
@@ -27,8 +27,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(fileupload());
 
 // usage routes
-app.use("/api", authRouter);
-app.use("/api", userRouter);
+// app.use("/api", authRouter);
+// app.use("/api", userRouter);
 
 
 

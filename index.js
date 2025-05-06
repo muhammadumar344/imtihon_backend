@@ -7,10 +7,11 @@ const path = require("path");
 
 dotenv.config();
 
-
 const authRouter = require("./src/routers/authRouter");
 const userRouter = require("./src/routers/userRouter");
-
+// routes
+// const authRouter = require("./src/routers/authRouter");
+// const userRouter = require("./src/routers/userRouter");
 
 
 
@@ -26,10 +27,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(fileupload());
 
-
 app.use("/api", authRouter);
 app.use("/api", userRouter);
-
+// usage routes
+// app.use("/api", authRouter);
+// app.use("/api", userRouter);
 
 
 

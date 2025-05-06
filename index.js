@@ -7,9 +7,8 @@ const path = require("path");
 
 dotenv.config();
 
-// routes
-// const authRouter = require("./src/routers/authRouter");
-// const userRouter = require("./src/routers/userRouter");
+const authRouter = require("./src/routers/authRouter");
+const userRouter = require("./src/routers/userRouter");
 
 
 
@@ -21,14 +20,12 @@ const PORT = process.env.PORT || 4000;
 
 app.use(express.static(path.join(__dirname, "src", "public")));
 
-// middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(fileupload());
 
-// usage routes
-// app.use("/api", authRouter);
-// app.use("/api", userRouter);
+app.use("/api", authRouter);
+app.use("/api", userRouter);
 
 
 

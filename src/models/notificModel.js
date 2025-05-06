@@ -1,35 +1,33 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose');
 
-const notificationSchema = new mongoose.Schema(
-  {
-    recipientId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-    },
-    senderId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-    type: {
-      type: String,
-      enum: ["like", "comment", "follow"],
-      required: true,
-    },
-    postId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Post",
-    },
-    commentId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Comment",
-    },
-    isRead: {
-      type: Boolean,
-      default: false,
-    },
+const notificationSchema = new mongoose.Schema({
+  recipient: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   },
-  { timestamps: true }
-);
+  sender: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    default: null
+  },
+  type: {
+    type: String,
+    enum: ['like', 'comment', 'follow', 'message', 'system'],
+    required: true
+  },
+  message: {
+    type: String,
+    required: true
+  },
+  isRead: {
+    type: Boolean,
+    default: false
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
 
-module.exports =  mongoose.model("Notification", notificationSchema);
+module.exports = mongoose.model('Notification', notificationSchema);

@@ -7,8 +7,14 @@ const path = require("path");
 
 dotenv.config();
 
+<<<<<<< HEAD
 const authRouter = require("./src/routers/authRouter");
 const userRouter = require("./src/routers/userRouter");
+=======
+// routes
+// const authRouter = require("./src/routers/authRouter");
+// const userRouter = require("./src/routers/userRouter");
+>>>>>>> 5503504ae7c57e7d84de3fcf90eafc93a22b185a
 
 
 
@@ -24,8 +30,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(fileupload());
 
+<<<<<<< HEAD
 app.use("/api", authRouter);
 app.use("/api", userRouter);
+=======
+// usage routes
+// app.use("/api", authRouter);
+// app.use("/api", userRouter);
+>>>>>>> 5503504ae7c57e7d84de3fcf90eafc93a22b185a
 
 
 
